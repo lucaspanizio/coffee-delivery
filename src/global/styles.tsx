@@ -1,17 +1,23 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Baloo 2', sans-serif;
   }
 
   body {
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;
+
+    ${({ theme }) => css`
+      color: ${theme.colors['base-text']};
+      background: ${theme.colors.background};
+    `};
+  }
+
+  body, input, textarea, button {
+    ${({ theme }) => theme.fonts.textM};
   }
 
   button {

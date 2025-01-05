@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { css, ThemeProvider as ThemeProviderSC } from 'styled-components';
 
-const theme = {
+export const theme = {
   colors: {
     yellow: '#DBAC2C',
     'yellow-light': '#F1E9C9',
