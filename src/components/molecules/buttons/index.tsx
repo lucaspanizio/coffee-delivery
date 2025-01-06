@@ -1,3 +1,4 @@
+import { CartButton } from './cart';
 import { IconButton } from './icon';
 import { PrimaryButton } from './primary';
 import { SecondaryButton } from './secondary';
@@ -6,6 +7,7 @@ const componentsMap = {
   primary: PrimaryButton,
   secondary: SecondaryButton,
   icon: IconButton,
+  cart: CartButton,
 } as const;
 
 type ComponentsMap = typeof componentsMap;
