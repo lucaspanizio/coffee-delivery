@@ -1,11 +1,12 @@
 import { ThemeProvider } from '@/global/theme';
 import { GlobalStyle } from '@/global/styles';
+import { AppRoutes } from '@/routes';
 
 export function App() {
   return (
     <ThemeProvider>
       <GlobalStyle />
-      <h1>Coffee Delivery</h1>
+      <AppRoutes />
     </ThemeProvider>
   );
 }
