@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     `};
   }
 
+  ul {
+    list-style: none;
+  }
+
   body, input, textarea, button {
     ${({ theme }) => theme.fonts.textM};
   }

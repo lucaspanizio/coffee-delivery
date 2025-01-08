@@ -6,7 +6,7 @@ export const Button = styled.button`
   align-items: center;
   gap: 4px;
 
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 6px;
   text-transform: uppercase;
 
