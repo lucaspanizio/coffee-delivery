@@ -8,7 +8,7 @@ interface CartButtonProps {
 export const CartButton = ({ items }: CartButtonProps) => {
   return (
     <S.Button>
-      <S.Badge>{items}</S.Badge>
+      {items && <S.Badge>{items}</S.Badge>}
       <Icon name="ShoppingCartSimple" color="yellow-dark" weight="fill" />
     </S.Button>
   );
