@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import dataMock from '../../data.json';
 
-type CoffeeProps = {
+type CoffeeType = {
   id: string;
   title: string;
   description: string;
@@ -11,7 +11,7 @@ type CoffeeProps = {
 };
 
 export const useFetchCoffees = () => {
-  const [coffees, setCoffees] = useState<CoffeeProps[]>([]);
+  const [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const useFetchCoffees = () => {
           setCoffees(dataMock.coffees);
           setIsLoading(false);
           resolve(true);
-        }, 2000);
+        }, 500);
       });
     };
 
