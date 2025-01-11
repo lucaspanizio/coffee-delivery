@@ -1,11 +1,14 @@
+import { CSSProperties } from 'styled-components';
 import * as S from './styles';
 
-interface TextInputProps extends React.ComponentProps<'input'> {}
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  containerStyle?: CSSProperties;
+}
 
-export const TextInput = (props: TextInputProps) => {
+export const TextInput = ({ containerStyle, ...rest }: TextInputProps) => {
   return (
-    <S.Wrapper>
-      <S.Input {...props} />
+    <S.Wrapper style={containerStyle}>
+      <S.Input {...rest} />
     </S.Wrapper>
   );
 };
