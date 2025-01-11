@@ -1,6 +1,7 @@
+import { Button } from '@/components/molecules/buttons';
 import { Icon } from '@/components/atoms/icon';
 import * as S from './styles';
-import { Button } from '../buttons';
+import { Flex } from '@/components/atoms/flex';
 
 export const Navbar = () => {
   return (
@@ -10,13 +11,13 @@ export const Navbar = () => {
         alt="Copo de café com um foguete decolando dentro. A direita, está escrito Coffee em negrito e Delivery com letras finas."
       />
 
-      <S.ButtonsWrapper>
+      <Flex gap="0.75rem">
         <S.Button>
           <Icon name="MapPin" size={22} color="purple" weight="fill" />
           Londrina, PR
         </S.Button>
         <Button variant="cart" items={3} />
-      </S.ButtonsWrapper>
+      </Flex>
     </S.Wrapper>
   );
 };
