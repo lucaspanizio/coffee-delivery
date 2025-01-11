@@ -1,13 +1,17 @@
 import * as icons from '@phosphor-icons/react';
-import { IconWeight } from '@phosphor-icons/react';
 import { ThemeType } from 'styled-components';
 import { colorToCSSValue } from '@/utils/colorToCSSValue';
 
+type IconName = keyof Omit<
+  typeof icons,
+  'Icon' | 'IconProps' | 'IconWeight' | 'IconContext' | 'IconBase'
+>;
+
 export interface IconProps {
-  name: keyof typeof icons;
-  size?: number;
-  weight?: IconWeight;
+  name: IconName;
+  size?: icons.IconProps['size'];
   color?: keyof ThemeType['colors'];
+  weight?: icons.IconWeight;
 }
 
 export const Icon = ({ name, color, weight, size = 22 }: IconProps) => {
