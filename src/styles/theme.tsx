@@ -75,6 +75,18 @@ export const theme = {
       line-height: 130%;
       font-weight: 700;
     `,
+    textBoldL: css`
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.25rem;
+      line-height: 130%;
+      font-weight: 700;
+    `,
+    textBoldM: css`
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      line-height: 130%;
+      font-weight: 700;
+    `,
     tag: css`
       font-family: 'Roboto', sans-serif;
       font-size: 0.625rem;

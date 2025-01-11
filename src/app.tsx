@@ -1,5 +1,5 @@
-import { ThemeProvider } from '@/global/theme';
-import { GlobalStyle } from '@/global/styles';
+import { ThemeProvider } from '@/styles/theme';
+import { GlobalStyle } from '@/styles';
 import { AppRoutes } from '@/routes';
 
 export function App() {
