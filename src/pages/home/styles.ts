@@ -84,13 +84,3 @@ export const SecoundSection = styled.section`
     padding: 1rem 2rem;
   }
 `;
-
-export const CardList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  row-gap: 3rem;
-
-  @media (max-width: 1024px) {
-    place-items: center;
-  }
-`;

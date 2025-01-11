@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useFetchCoffees } from '@/hooks/useFetchCoffees';
 import { Highlights } from '@/components/molecules/highlights';
-import { Card } from '@/components/organisms/card';
+import { Catalog } from '@/components/organisms/catalog';
 import * as S from './styles';
 
 export const Home = () => {
@@ -25,19 +25,7 @@ export const Home = () => {
 
       <S.SecoundSection>
         <h2>Nossos cafés</h2>
-
-        <S.CardList>
-          {coffees.map((coffee) => (
-            <Card
-              key={coffee.id}
-              title={coffee.title}
-              description={coffee.description}
-              tags={coffee.tags}
-              image={coffee.image}
-              price={coffee.price}
-            />
-          ))}
-        </S.CardList>
+        <Catalog coffees={coffees} />
       </S.SecoundSection>
     </Fragment>
   );

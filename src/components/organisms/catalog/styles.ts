@@ -1,17 +1,21 @@
 import styled, { css } from 'styled-components';
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding-top: 75px;
-  gap: 0.5rem;
+export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  row-gap: 3rem;
+
+  @media (max-width: 1024px) {
+    place-items: center;
+  }
 `;
 
 export const Image = styled.img`
   position: absolute;
   top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 120px;
   min-width: 120px;
 `;
@@ -30,12 +34,6 @@ export const Description = styled.span`
   `}
 
   text-align-last: center;
-`;
-
-export const TagsWrapper = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
 `;
 
 export const Footer = styled.footer`
@@ -63,9 +61,4 @@ export const Price = styled.div`
       ${theme.fonts.titleM}
     }
   `}
-`;
-
-export const Actions = styled.div`
-  display: flex;
-  gap: 0.5rem;
 `;
