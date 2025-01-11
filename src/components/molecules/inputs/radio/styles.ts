@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
+import { flexCenter } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  ${flexCenter}
+  position: relative;
+  flex: 1;
 
-  padding: 16px;
   border-radius: 6px;
   border: 1px solid transparent;
+  user-select: none;
   cursor: pointer;
 
   input {
@@ -18,13 +18,22 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors['base-button']};
 
-    &[data-state='true'] {
-      background-color: ${theme.colors['purple-light']};
+    &:has(input:checked) {
+      background-color: ${({ theme }) => theme.colors['purple-light']};
+      border-color: ${({ theme }) => theme.colors.purple};
 
       &:not(:hover) {
         border-color: ${theme.colors.purple};
       }
     }
+
+    /* &[data-state='true'] {
+      background-color: ${theme.colors['purple-light']};
+
+      &:not(:hover) {
+        border-color: ${theme.colors.purple};
+      }
+    } */
 
     &:hover {
       background-color: ${theme.colors['base-hover']};
@@ -34,7 +43,11 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label`
   cursor: inherit;
+  text-align: center;
   text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 
   ${({ theme }) => css`
     ${theme.fonts.buttonM}
