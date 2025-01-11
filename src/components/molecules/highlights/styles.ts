@@ -1,4 +1,5 @@
 import { css, styled } from 'styled-components';
+import { flexCenter } from '@/styles/mixins';
 
 export const List = styled.ul`
   display: grid;
@@ -38,9 +39,7 @@ export const List = styled.ul`
     `}
 
     div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      ${flexCenter}
       padding: 0.5rem;
       border-radius: 50%;
     }

@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
+import { flexCenter } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 6px;
   min-width: 72px;
 
@@ -20,9 +21,7 @@ export const Button = styled.button`
   all: unset;
   cursor: pointer;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexCenter}
 
   ${({ theme }) => css`
     svg {

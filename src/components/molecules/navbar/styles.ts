@@ -18,11 +18,6 @@ export const Wrapper = styled.header`
   }
 `;
 
-export const ButtonsWrapper = styled.div`
-  display: flex;
-  gap: 0.75rem;
-`;
-
 export const Button = styled.button`
   display: flex;
   justify-content: center;

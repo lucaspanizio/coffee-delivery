@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
+import { flexCenter } from '@/styles/mixins';
 
 export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenter}
+  width: 100%;
 
   padding: 0.75rem 0.5rem;
   border-radius: 6px;

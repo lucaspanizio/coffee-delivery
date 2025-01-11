@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
+import { flexCenter } from '@/styles/mixins';
 
 export const Tag = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenter}
 
   padding: 4px 8px;
   border-radius: 100px;
