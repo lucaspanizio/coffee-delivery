@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components';
 import { flexCenter } from '@/styles/mixins';
 
-export const Button = styled.button`
-  ${flexCenter}
-  width: 100%;
+interface ButtonProps {
+  fullWidth: boolean;
+}
 
-  padding: 0.75rem 0.5rem;
+export const Button = styled.button<ButtonProps>`
+  ${flexCenter}
+
+  padding: 0.75rem;
   border-radius: 6px;
   text-transform: uppercase;
 
-  ${({ theme }) => css`
+  ${({ theme, fullWidth }) => css`
+    width: ${fullWidth ? '100%' : 'fit-content'};
     color: ${theme.colors.white};
     background-color: ${theme.colors.yellow};
     ${theme.fonts.buttonG};
