@@ -16,6 +16,7 @@ export const Catalog = ({ coffees }: CatalogProps) => {
     <S.Wrapper>
       {coffees.map(({ image, tags, title, description, price }) => (
         <Box
+          key={title}
           borderBottomLeftRadius="36px"
           borderTopRightRadius="36px"
           padding="1.5rem"
