@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router';
-import { Navbar } from '@/components/molecules/navbar';
+import { Navbar } from '@/components/templates/layout/navbar';
 
 export const Layout = () => {
   return (
