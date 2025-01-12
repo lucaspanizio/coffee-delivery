@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { CartItem } from '@/components/molecules/cartItem';
 import { Button } from '@/components/molecules/buttons';
 import { Input } from '@/components/molecules/inputs';
@@ -8,6 +9,13 @@ import data from '../../../data.json';
 import * as S from './styles';
 
 export const Checkout = () => {
+  const navigate = useNavigate();
+
+  function goToSuccessPage() {
+    if (window.location.href.includes('/success')) return;
+    navigate('/success');
+  }
+
   return (
     <S.Wrapper>
       <section>
@@ -115,7 +123,7 @@ export const Checkout = () => {
               </div>
             </S.Summary>
 
-            <Button variant="primary" text="confirmar pedido" />
+            <Button variant="primary" text="confirmar pedido" fullWidth onClick={goToSuccessPage} />
           </Flex>
         </Box>
       </section>
