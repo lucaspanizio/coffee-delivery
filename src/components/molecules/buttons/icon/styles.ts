@@ -10,8 +10,13 @@ export const Button = styled.button`
   ${({ theme }) => css`
     background-color: ${theme.colors['purple']};
 
-    &:hover {
+    &:hover.not(:disabled) {
       background-color: ${theme.colors['purple-dark']};
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     svg {

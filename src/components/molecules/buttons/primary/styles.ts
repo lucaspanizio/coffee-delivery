@@ -21,5 +21,10 @@ export const Button = styled.button<ButtonProps>`
     &:hover {
       background-color: ${theme.colors['yellow-dark']};
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   `};
 `;

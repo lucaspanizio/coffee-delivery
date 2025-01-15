@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-interface PrimaryButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface PrimaryButtonProps extends React.ComponentProps<'button'> {
   text: string;
   fullWidth?: boolean;
 }

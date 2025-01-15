@@ -1,7 +1,7 @@
 import { Icon, IconProps } from '@/components/atoms/icon';
 import * as S from './styles';
 
-type SecondaryButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
+type SecondaryButtonProps = React.ComponentProps<'button'> & {
   text: string;
   startIcon?: IconProps['name'];
 };

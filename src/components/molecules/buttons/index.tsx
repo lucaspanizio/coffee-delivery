@@ -18,5 +18,6 @@ type ButtonProps = {
 
 export const Button = ({ variant, ...rest }: ButtonProps) => {
   const Component = componentsMap[variant];
-  return <Component {...(rest as any)} />;
+  return <Component as="button" {...(rest as any)} />;
 };
+  

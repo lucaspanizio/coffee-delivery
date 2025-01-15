@@ -1,7 +1,7 @@
 import { Icon, IconProps } from '@/components/atoms/icon';
 import * as S from './styles';
 
-type IconButtonProps = React.HTMLAttributes<HTMLButtonElement> & {} & (
+type IconButtonProps = React.ComponentProps<'button'> & {} & (
     | { iconName: IconProps['name']; iconProps?: never }
     | { iconName?: never; iconProps: IconProps }
   );
