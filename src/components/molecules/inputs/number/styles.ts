@@ -30,9 +30,14 @@ export const Button = styled.button`
       fill: ${theme.colors['purple']};
     }
 
-    &:hover svg {
+    &:hover.not(:disabled) svg {
       stroke: ${theme.colors['purple-dark']};
       fill: ${({ theme }) => theme.colors['purple-dark']};
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   `}
 `;

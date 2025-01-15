@@ -30,6 +30,10 @@ export const Input = styled.input`
   max-width: 100%;
   border-radius: 4px;
 
+  &[data-error='true'] {
+    outline: 1px solid #b91c1c;
+  }
+
   ${({ theme }) => css`
     color: ${theme.colors['base-text']};
     caret-color: ${theme.colors['base-label']};

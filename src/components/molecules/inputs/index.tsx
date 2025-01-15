@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { TextInput } from './text';
 import { RadioInput } from './radio';
 import { NumberInput } from './number';
@@ -10,11 +11,16 @@ const componentsMap = {
 
 type ComponentsMap = typeof componentsMap;
 
-type InputProps = {
-  [K in keyof ComponentsMap]: React.ComponentProps<ComponentsMap[K]> & { variant: K };
-}[keyof ComponentsMap];
-
-export const Input = ({ variant, ...rest }: InputProps) => {
-  const Component = componentsMap[variant];
-  return <Component {...(rest as any)} />;
+type InputProps<K extends keyof ComponentsMap> = React.ComponentProps<ComponentsMap[K]> & {
+  variant: K;
 };
+
+export const Input = forwardRef<
+  React.ComponentRef<(typeof componentsMap)[keyof ComponentsMap]>,
+  InputProps<keyof ComponentsMap>
+>(({ variant, ...rest }, ref) => {
+  const Component = componentsMap[variant];
+  return <Component {...(rest as any)} ref={ref} />;
+});
+
+Input.displayName = 'Input';
