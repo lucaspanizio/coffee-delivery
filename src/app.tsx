@@ -1,16 +1,15 @@
-import isPropValid from '@emotion/is-prop-valid';
-import { StyleSheetManager } from 'styled-components';
-import { ThemeProvider } from '@/styles/theme';
-import { GlobalStyle } from '@/styles';
+import { ToastContainer } from 'react-toastify';
+import { StylesProvider } from '@/store/contexts/StylesProvider';
+import { CartProvider } from '@/store/contexts/CartProvider';
 import { AppRoutes } from '@/routes';
 
 export function App() {
   return (
-    <ThemeProvider>
-      <StyleSheetManager shouldForwardProp={(prop) => isPropValid(prop)}>
-        <GlobalStyle />
+    <StylesProvider>
+      <CartProvider>
         <AppRoutes />
-      </StyleSheetManager>
-    </ThemeProvider>
+      </CartProvider>
+      <ToastContainer />
+    </StylesProvider>
   );
 }
