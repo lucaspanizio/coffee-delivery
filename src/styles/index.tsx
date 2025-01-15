@@ -1,6 +1,15 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    ${({ theme }) => css`
+      --toastify-text-color-light: ${theme.colors['base-text']};
+      --toastify-color-light: ${theme.colors.background};
+      --toastify-icon-color-info: ${theme.colors.purple};
+      --toastify-color-progress-info: ${theme.colors.purple};
+    `}
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -27,5 +36,10 @@ export const GlobalStyle = createGlobalStyle`
   button {
     border: none;
     cursor: pointer;
+  }
+
+  .Toastify__toast {
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
   }
 `;
