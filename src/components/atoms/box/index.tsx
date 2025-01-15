@@ -1,19 +1,7 @@
-import { CSSProperties } from 'styled-components';
 import * as S from './styles';
 
-type BorderRadiusProps = Pick<
-  CSSProperties,
-  | 'borderBottomLeftRadius'
-  | 'borderBottomRightRadius'
-  | 'borderTopLeftRadius'
-  | 'borderTopRightRadius'
->;
-
-interface BoxProps extends BorderRadiusProps {
+interface BoxProps extends S.BoxProps {
   children?: React.ReactNode;
-  padding?: CSSProperties['padding'];
-  height?: CSSProperties['height'];
-  width?: CSSProperties['width'];
 }
 
 export const Box = ({ children, ...styleProps }: BoxProps) => {
