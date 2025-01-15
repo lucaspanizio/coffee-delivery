@@ -1,8 +1,22 @@
+import { useLocation } from 'react-router-dom';
 import { Flex } from '@/components/atoms/flex';
 import { Icon } from '@/components/atoms/icon';
+import { FormProps } from '../checkout/settings';
 import * as S from './styles';
 
 export const Success = () => {
+  const addressState = useLocation().state as FormProps;
+
+  function formatPaymentMethod(key: string) {
+    const paymentMethods: { [key: string]: string } = {
+      credit: 'Cartão de crédito',
+      debit: 'Cartão de débito',
+      cash: 'Dinheiro',
+    };
+
+    return paymentMethods[key];
+  }
+
   return (
     <S.Wrapper>
       <S.Heading>
@@ -19,9 +33,14 @@ export const Success = () => {
             <Icon name="MapPin" size={32} color="background" weight="fill" background="purple" />
             <Flex flexDirection="column">
               <span>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em{' '}
+                <strong>
+                  {addressState.street}, {addressState.number}
+                </strong>
               </span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>
+                {addressState.neighborhood} - {addressState.city}, {addressState.state}
+              </span>
             </Flex>
           </Flex>
 
@@ -40,7 +59,7 @@ export const Success = () => {
             <Flex flexDirection="column">
               <span>Pagamento na entrega</span>
               <span>
-                <strong>Cartão de crédito</strong>
+                <strong>{formatPaymentMethod(addressState.paymentMethod)}</strong>
               </span>
             </Flex>
           </Flex>

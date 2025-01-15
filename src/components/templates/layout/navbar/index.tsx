@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/hooks/useNavigate';
 import { useGeolocation } from '@/hooks/useGeolocation';
 import { Button } from '@/components/molecules/buttons';
 import { Icon } from '@/components/atoms/icon';
@@ -25,7 +25,7 @@ export const Navbar = () => {
             {location.city}, {location.state}
           </S.Button>
         )}
-        <Button variant="cart" items={3} />
+        <Button variant="cart" />
       </Flex>
     </S.Wrapper>
   );

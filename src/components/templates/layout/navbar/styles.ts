@@ -25,6 +25,7 @@ export const Button = styled.button`
   white-space: nowrap;
   gap: 4px;
 
+  cursor: inherit;
   padding: 0.5rem;
   border-radius: 6px;
 
